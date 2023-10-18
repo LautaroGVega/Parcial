@@ -2,6 +2,7 @@ package com.example;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Equipo {
     private String name;
@@ -40,6 +41,16 @@ public class Equipo {
             }
         }
         return null;
+    }
+    
+   
+    public String imprimirPlantel() {
+        List<String> plantel = jugadores.stream()
+                .sorted((j1, j2) -> Integer.compare(j1.getNumero(), j2.getNumero()))
+                .map(jugador -> String.format("[%d] %s (%s)", jugador.getNumero(), jugador.getName(), jugador.getPosicion()))
+                .collect(Collectors.toList());
+
+        return String.join(", ", plantel);
     }
 }
 
