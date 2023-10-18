@@ -12,12 +12,12 @@ public class Torneo {
         this.equipos = new ArrayList<>();
         this.partidos = new ArrayList<>();
     }
-        // Getter para el nombre del torneo
+       
     public String getNombre() {
             return nombre;
     }
     
-        // Setter para el nombre del torneo
+      
     public void setNombre(String nombre) {
             this.nombre = nombre;
     }

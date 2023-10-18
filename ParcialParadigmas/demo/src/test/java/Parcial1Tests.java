@@ -48,6 +48,7 @@ import org.junit.Test;
     @Test
     public void torneo_agregar_partidos_parcial_ejercicio_ejemplo_02()
     {
+        Estadio estadioBombonera = new Estadio("La Bombonera", "Buenos Aires", "Argentina");
         Torneo torneo = new Torneo("Copa Conmebol Libertadores");
 
         Equipo boca = new Equipo("Boca Juniors", "BOC");        
@@ -60,11 +61,11 @@ import org.junit.Test;
         torneo.agregar(internacional);        
         torneo.agregar(fluminense);
             
-        Partido partido1Ida = new Partido(internacional, fluminense, "Semifinal Partido Ida");
-        Partido partido1Vuelta = new Partido(fluminense, internacional, "Semifinal Partido Vuelta");   
+        Partido partido1Ida = new Partido(estadioBombonera, internacional, fluminense, "Semifinal Partido Ida");
+        Partido partido1Vuelta = new Partido(estadioBombonera, fluminense, internacional, "Semifinal Partido Vuelta");   
 
-        Partido partido2Ida = new Partido(palmeiras, boca, "Semifinal Partido Ida");
-        Partido partido2Vuelta = new Partido(boca, palmeiras, "Semifinal Partido Vuelta");    
+        Partido partido2Ida = new Partido(estadioBombonera, palmeiras, boca, "Semifinal Partido Ida");
+        Partido partido2Vuelta = new Partido(estadioBombonera, boca, palmeiras, "Semifinal Partido Vuelta");    
 
         
         torneo.agregar(partido1Ida);
@@ -83,6 +84,7 @@ import org.junit.Test;
         @Test
     public void torneo_sacar_tarjeta_roja_a_un_jugador_en_un_partido_parcial_ejercicio_ejemplo_04()
     {        
+        Estadio estadioBombonera = new Estadio("La Bombonera", "Buenos Aires", "Argentina");
         Equipo boca = new Equipo("Boca Juniors", "BOC");        
         Equipo palmeiras = new Equipo("Palmeiras", "PAL");        
         
@@ -92,7 +94,7 @@ import org.junit.Test;
         boca.agregar(jugador10);         
         boca.agregar(jugador19); 
 
-        Partido partidoIda = new Partido(palmeiras, boca, "Semifinal Partido Ida");    
+        Partido partidoIda = new Partido(estadioBombonera, palmeiras, boca, "Semifinal Partido Ida");    
 
         Tarjeta tarjetaRojaParaJugador10DeBoca = new Tarjeta("ROJA", jugador10);
 
@@ -140,6 +142,7 @@ import org.junit.Test;
         assertEquals("La Bombonera, Buenos Aires (Argentina)", partido.getEstadio().toString());          
          
     }
+    
 
 
 
