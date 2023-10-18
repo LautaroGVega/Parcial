@@ -8,8 +8,10 @@ public class Partido {
     private Equipo equipoVisitante;
     private String nombre;
     private List<Tarjeta> tarjetas;
+    private Estadio estadio;
 
-    public Partido(Equipo equipoLocal, Equipo equipoVisitante, String nombre) {
+    public Partido(Estadio estadio, Equipo equipoLocal, Equipo equipoVisitante, String nombre) {
+        this.estadio = estadio;
         this.equipoLocal = equipoLocal;
         this.equipoVisitante = equipoVisitante;
         this.nombre = nombre;
@@ -51,6 +53,10 @@ public class Partido {
 
     public List<Tarjeta> getTarjetas() {
         return tarjetas;
+    }
+
+    public Object getEstadio() {
+        return estadio;
     }
 
 }
