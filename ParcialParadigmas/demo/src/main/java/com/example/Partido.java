@@ -15,6 +15,22 @@ public class Partido {
         this.nombre = nombre;
         this.tarjetas = new ArrayList<>();
     }
+    
+    public Equipo getEquipoLocal() {
+        return equipoLocal;
+    }
+
+    public void setEquipoLocal(Equipo equipoLocal) {
+        this.equipoLocal = equipoLocal;
+    }
+
+    public Equipo getEquipoVisitante() {
+        return equipoVisitante;
+    }
+
+    public void setEquipoVisitante(Equipo equipoVisitante) {
+        this.equipoVisitante = equipoVisitante;
+    }
 
     public String getName() {
         return nombre + " " + equipoLocal.getAbreviatura() + "x" + equipoVisitante.getAbreviatura();
