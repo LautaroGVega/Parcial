@@ -15,7 +15,6 @@ private String pais;
         return nombre;
     }
 
-    // Setter para el nombre del torneo
     public void setName(String nombre) {
         this.nombre = nombre;
     }
@@ -24,7 +23,7 @@ private String pais;
         return ciudad;
     }
 
-    // Setter para el nombre del torneo
+   
     public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
     }
@@ -32,7 +31,7 @@ private String pais;
         return pais;
     }
 
-    // Setter para el nombre del torneo
+   
     public void setPais(String pais) {
         this.pais = pais;
     }
