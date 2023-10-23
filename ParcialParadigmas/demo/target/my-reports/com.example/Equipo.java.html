@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Equipo.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ParcialParadigmas</a> &gt; <a href="index.source.html" class="el_package">com.example</a> &gt; <span class="el_source">Equipo.java</span></div><h1>Equipo.java</h1><pre class="source lang-java linenums">package com.example;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Equipo {
+    private String name;
+    private String abreviatura;
+    private List&lt;Jugador&gt; jugadores;
+
+<span class="fc" id="L12">    public Equipo(String name, String abreviatura) {</span>
+<span class="fc" id="L13">        this.name = name;</span>
+<span class="fc" id="L14">        this.abreviatura = abreviatura;</span>
+<span class="fc" id="L15">        this.jugadores = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L16">    }</span>
+    public String getName() {
+<span class="fc" id="L18">        return name;</span>
+    }
+
+    public void setName(String name) {
+<span class="nc" id="L22">        this.name = name;</span>
+<span class="nc" id="L23">    }</span>
+    
+    public String getAbreviatura() {
+<span class="fc" id="L26">        return abreviatura;</span>
+    }
+    
+    public void agregar(Jugador jugador) {
+<span class="fc" id="L30">        jugadores.add(jugador);</span>
+<span class="fc" id="L31">    }</span>
+
+    public int jugadoresCantidad() {
+<span class="nc" id="L34">        return jugadores.size();</span>
+    }
+
+    public Jugador obtenerJugador(int numero) {
+<span class="nc bnc" id="L38" title="All 2 branches missed.">        for (Jugador jugador : jugadores) {</span>
+<span class="nc bnc" id="L39" title="All 2 branches missed.">            if (jugador.getNumero() == numero) {</span>
+<span class="nc" id="L40">                return jugador;</span>
+            }
+<span class="nc" id="L42">        }</span>
+<span class="nc" id="L43">        return null;</span>
+    }
+    
+   
+    public String imprimirPlantel() {
+<span class="fc" id="L48">        List&lt;String&gt; plantel = jugadores.stream()</span>
+<span class="fc" id="L49">                .sorted((j1, j2) -&gt; Integer.compare(j1.getNumero(), j2.getNumero()))</span>
+<span class="fc" id="L50">                .map(jugador -&gt; String.format(&quot;[%d] %s (%s)&quot;, jugador.getNumero(), jugador.getName(), jugador.getPosicion()))</span>
+<span class="fc" id="L51">                .collect(Collectors.toList());</span>
+
+<span class="fc" id="L53">        return String.join(&quot;, &quot;, plantel);</span>
+    }
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>
