@@ -1,6 +1,6 @@
 package com.example;
 
-public class Jugador implements iJugador{
+public class Jugador implements IJugador{
     private String name;
     private int numero;
     private String value;
