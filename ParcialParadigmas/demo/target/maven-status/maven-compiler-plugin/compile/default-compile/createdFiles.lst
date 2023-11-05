@@ -1,0 +1,12 @@
+com\example\PantallaLed.class
+com\example\Var.class
+com\example\Jugador.class
+com\example\Torneo.class
+com\example\Equipo.class
+com\example\Estadio.class
+com\example\Partido.class
+com\example\TarjetaAmarilla.class
+com\example\TarjetaRoja.class
+com\example\IImprimible.class
+com\example\TarjetaBase.class
+com\example\IJugador.class
