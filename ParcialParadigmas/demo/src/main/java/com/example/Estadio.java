@@ -1,6 +1,6 @@
 package com.example;
 
-public class Estadio {
+public class Estadio implements IImprimible{
 private String nombre;
 private String ciudad;
 private String pais;
@@ -39,5 +39,13 @@ private String pais;
     @Override
     public String toString() {
         return nombre + ", " + ciudad + " (" + pais + ")";
+    }
+    
+    public String impresion() {
+        // "[Estadio] La Bombonera (Buenos Aires - Argentina)"
+        return String.format("[Estadio] %s (%s - %s)",
+                getName(),
+                getCiudad(),
+                getPais());
     }
 }

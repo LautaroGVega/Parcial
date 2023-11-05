@@ -1,8 +1,9 @@
 import com.example.Equipo;
 import com.example.Estadio;
-import com.example.IJugador;
+import com.example.IImprimible;
 import com.example.IJugador;
 import com.example.Jugador;
+import com.example.PantallaLed;
 import com.example.Partido;
 import com.example.TarjetaAmarilla;
 import com.example.TarjetaBase;
@@ -343,8 +344,27 @@ import org.junit.Test;
 
 
     }
+    @Test
+    public void pantallas_estadio_parcial_ejercicio_ejemplo_10()
+    {        
+        IJugador jugadorBoca6 = new Jugador("Marcos Rojo", 6);
+        jugadorBoca6.setPosicion("Defensor");
 
 
+        Equipo boca = new Equipo("Boca Juniors", "BOC");          
+     
+        Estadio estadioBombonera = new Estadio("La Bombonera", "Buenos Aires", "Argentina");
+       
+
+
+        PantallaLed pantallaLed = new PantallaLed();
+
+
+       
+        assertEquals("[Jugador 6] Marcos Rojo > Defensor", pantallaLed.imprimir((IImprimible)jugadorBoca6));        
+        assertEquals("[Equipo] Boca Juniors > BOC", pantallaLed.imprimir((IImprimible)boca));
+        assertEquals("[Estadio] La Bombonera (Buenos Aires - Argentina)", pantallaLed.imprimir((IImprimible)estadioBombonera));
+    }
 
 
 

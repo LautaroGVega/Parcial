@@ -1,8 +1,7 @@
 package com.example;
 
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
+
 
 public class Var {
     private Partido partido;
@@ -12,7 +11,6 @@ public class Var {
     }
     
     public int cantidadTarjetas(Equipo pEquipo){
-        // have a list of players of pEquipo to reference searching for cards
         List<IJugador> jugadores = pEquipo.getJugadores();
         List<TarjetaBase> tarjetas = this.partido.getTarjetas();
         return (int) tarjetas.stream()

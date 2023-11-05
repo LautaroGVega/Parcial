@@ -1,6 +1,6 @@
 package com.example;
 
-public class Jugador implements IJugador{
+public class Jugador implements IJugador, IImprimible{
     private String name;
     private int numero;
     private String value;
@@ -36,5 +36,12 @@ public class Jugador implements IJugador{
 	public void setPosicion(String value) {
         this.value = value;
     }
-
+    @Override
+    public String impresion() {
+        // "[Jugador 6] Marcos Rojo > Defensor"
+        return String.format("[Jugador %d] %s > %s",
+                getNumero(),
+                getName(),
+                getPosicion());
+    }
 }
