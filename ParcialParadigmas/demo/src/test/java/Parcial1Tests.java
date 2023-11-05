@@ -1,6 +1,7 @@
 import com.example.Equipo;
 import com.example.Estadio;
 import com.example.IJugador;
+import com.example.IJugador;
 import com.example.Jugador;
 import com.example.Partido;
 import com.example.TarjetaAmarilla;

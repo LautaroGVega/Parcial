@@ -33,7 +33,6 @@ public class Equipo {
     public int jugadoresCantidad() {
         return jugadores.size();
     }
-    
     public List<IJugador> getJugadores() {
         return jugadores;
     }

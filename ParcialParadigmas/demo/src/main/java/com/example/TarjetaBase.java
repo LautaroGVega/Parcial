@@ -7,6 +7,7 @@ public abstract class TarjetaBase{
     private IJugador jugador;
 
 
+
     public TarjetaBase(String color, IJugador jugador) {
         setColor(color);
         setJugador(jugador);
@@ -20,7 +21,8 @@ public abstract class TarjetaBase{
         this.color = value;
     }
 
-    public IJugador getJugador() {
+    
+    public IJugador getJugador(){
         return jugador;
     }
 
