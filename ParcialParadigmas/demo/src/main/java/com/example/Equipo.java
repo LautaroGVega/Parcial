@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 public class Equipo {
     private String name;
     private String abreviatura;
-    private List<Jugador> jugadores;
+    private List<IJugador> jugadores;
 
     public Equipo(String name, String abreviatura) {
         this.name = name;
@@ -26,16 +26,24 @@ public class Equipo {
         return abreviatura;
     }
     
-    public void agregar(Jugador jugador) {
-        jugadores.add(jugador);
+    public void agregar(IJugador jugadorBoca6) {
+        jugadores.add(jugadorBoca6);
     }
 
     public int jugadoresCantidad() {
         return jugadores.size();
     }
+    
+    public List<IJugador> getJugadores() {
+        return jugadores;
+    }
 
-    public Jugador obtenerJugador(int numero) {
-        for (Jugador jugador : jugadores) {
+    public void setJugadores(List<IJugador> jugadores) {
+        this.jugadores = jugadores;
+    }
+
+    public IJugador obtenerJugador(int numero) {
+        for (IJugador jugador : jugadores) {
             if (jugador.getNumero() == numero) {
                 return jugador;
             }

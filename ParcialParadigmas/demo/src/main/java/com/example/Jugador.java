@@ -1,6 +1,6 @@
 package com.example;
 
-public class Jugador implements iJugador{
+public class Jugador implements IJugador{
     private String name;
     private int numero;
     private String value;
@@ -8,6 +8,7 @@ public class Jugador implements iJugador{
     public Jugador(String name, int numero) {
         this.name = name;
         this.numero = numero;
+    
     }
 
     public String getName() {
@@ -35,5 +36,5 @@ public class Jugador implements iJugador{
 	public void setPosicion(String value) {
         this.value = value;
     }
-    
+
 }

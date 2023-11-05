@@ -1,7 +1,7 @@
 package com.example;
 
 public class TarjetaRoja extends TarjetaBase {
-    public TarjetaRoja(Jugador jugador) {
-        super("ROJA", jugador);
+    public TarjetaRoja(IJugador jugadorBoca6) {
+        super("ROJA", jugadorBoca6);
     }
 }

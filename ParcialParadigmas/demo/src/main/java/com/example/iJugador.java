@@ -1,6 +1,6 @@
 package com.example;
 
-public interface iJugador {
+public interface IJugador {
    
     public String getName();
 

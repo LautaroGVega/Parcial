@@ -4,10 +4,10 @@ public abstract class TarjetaBase{
 
 
     private String color;
-    private Jugador jugador;
+    private IJugador jugador;
 
 
-    public TarjetaBase(String color, Jugador jugador) {
+    public TarjetaBase(String color, IJugador jugador) {
         setColor(color);
         setJugador(jugador);
     }
@@ -20,12 +20,12 @@ public abstract class TarjetaBase{
         this.color = value;
     }
 
-    public Jugador getJugador() {
+    public IJugador getJugador() {
         return jugador;
     }
 
-    private void setJugador(Jugador value) {
-        this.jugador = value;
+    private void setJugador(IJugador jugador) {
+        this.jugador = jugador;
 
            }
 
