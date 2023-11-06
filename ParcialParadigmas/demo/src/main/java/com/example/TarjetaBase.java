@@ -1,8 +1,6 @@
 package com.example;
 
 public abstract class TarjetaBase{
-
-
     private String color;
     private IJugador jugador;
 

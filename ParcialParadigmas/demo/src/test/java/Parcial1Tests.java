@@ -386,7 +386,7 @@ import org.junit.Test;
         assertEquals("[Estadio] La Bombonera (Buenos Aires - Argentina)", pantallaLed.imprimir((IImprimible)estadioBombonera));
     }
     @Test
-    public void testArbitrosConfiguradosCorrectamente() {
+    public void testInstanciarArbitros() {
         // Configurar los objetos necesarios para el test
         Equipo boca = new Equipo("Boca Juniors", "BOC");        
         Equipo palmeiras = new Equipo("Palmeiras", "PAL");  
@@ -410,13 +410,37 @@ import org.junit.Test;
         assertEquals(arbitroLinea1, var.getArbitroLinea().get(0));
         assertEquals(arbitroLinea2, var.getArbitroLinea().get(1));
     }
+    @Test
+    public void testVarCantidadDeTarjetas() {
+        // Configurar los objetos necesarios para el test
+        Equipo boca = new Equipo("Boca Juniors", "BOC");        
+        Equipo palmeiras = new Equipo("Palmeiras", "PAL");  
+        Estadio estadioBombonera = new Estadio("La Bombonera", "Buenos Aires", "Argentina");
+        Partido partido = new Partido(estadioBombonera, boca, palmeiras, "Semifinal Partido Vuelta"); 
+        Arbitro arbitro = new Arbitro("Árbitro Principal");
+        AsistenteDeVideo arbitroAsistente = new AsistenteDeVideo("Asistente de Video");
+        Arbitro arbitroLinea1 = new Arbitro("Árbitro de Línea 1");
+        Arbitro arbitroLinea2 = new Arbitro("Árbitro de Línea 2");
+        
+        IJugador jugadorBoca19 = new Jugador("Valentin Barco", 19);
+        boca.agregar(jugadorBoca19);
+        arbitro.agregarTarjetaAmarilla(jugadorBoca19, partido);
+        arbitro.agregarTarjetaAmarilla(jugadorBoca19, partido);
+        arbitro.agregarTarjetaRoja(jugadorBoca19, partido);
+         
+        // Configurar el objeto Var con los árbitros
+        Var var = new Var(partido);
+        var.setAsistenteDeVideo(arbitroAsistente);
+        var.setArbitro(arbitro);
+        var.setArbitroLinea(List.of(arbitroLinea1, arbitroLinea2));
 
-
-
-
-
-
+        // Verificar si los árbitros están configurados correctamente
+        assertEquals(arbitro, var.getArbitro());
+        assertEquals(2, var.cantidadTarjetasAmarillas()); 
+        assertEquals(1, var.cantidadTarjetasRojas());    
+       
+        assertEquals(3, var.cantidadTarjetas(boca));        
+        // El arbitro debe asignas una tarjeta a un jugador o vincular 
+    }
 
 }
-
-
