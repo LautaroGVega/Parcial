@@ -7,6 +7,8 @@ public class Var {
     private Partido partido;
     private AsistenteDeVideo asistenteDeVideo;
     private List<AVAR> aVar;
+    private Arbitro arbitro;
+    private List<Arbitro> arbitros;
 
     public Var(Partido partido) {
         this.partido = partido;
@@ -62,6 +64,22 @@ public class Var {
         }
         return cont;
     }
+
+    public void setArbitro(Arbitro arbitro) {
+        this.arbitro = arbitro;
+    }
+    public Arbitro getArbitro() {
+        return arbitro;
+    }
+
+    public void setArbitroLinea(List<Arbitro> arbitros) {
+        this.arbitros = arbitros;
+    }
+    
+    public List<Arbitro> getArbitroLinea() {
+        return arbitros;
+    }
+
 
 
 }
