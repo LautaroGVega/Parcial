@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+
 public class Var {
     private Partido partido;
     private AsistenteDeVideo asistenteDeVideo;
@@ -11,6 +12,7 @@ public class Var {
     private Arbitro arbitro;
     private List<Arbitro> arbitros;
     private Estadio estadio;
+
 
     public Var(Partido partido) {
         this.partido = partido;
@@ -70,6 +72,7 @@ public class Var {
         }
         return cont;
     }
+    
     public Partido getPartido() {
         return this.partido;
     }
@@ -110,8 +113,33 @@ public class Var {
         setAsistenteDeVideo(asistenteDeVideo);
         setaVar(aVAR1, aVAR2, aVAR3);
     }
+    /*
+    public int cantidadTarjetas(IJugador jugador) {
+        int count = 0;
 
+        for (TarjetaBase tarjeta : partido.getTarjetas()) {
+            if (tarjeta.getJugador().equals(jugador)) {
+                count++;
+            }
+        }
 
+        return count;
+    }
+    public List<IJugador> jugadoresConTarjetaAmarilla() {
+        List<IJugador> jugadoresConTarjetaAmarilla = new ArrayList<>();
+
+        for (TarjetaBase tarjeta : partido.getTarjetas()) {
+            if (tarjeta instanceof TarjetaAmarilla) {
+                IJugador jugador = tarjeta.getJugador();
+                if (!jugadoresConTarjetaAmarilla.contains(jugador)) {
+                    jugadoresConTarjetaAmarilla.add(jugador);
+                }
+            }
+        }
+
+        return jugadoresConTarjetaAmarilla;
+    }
+    */
 
 }
 

@@ -3,7 +3,9 @@ package com.example;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Partido {
+    
     private Equipo equipoLocal;
     private Equipo equipoVisitante;
     private String nombre;

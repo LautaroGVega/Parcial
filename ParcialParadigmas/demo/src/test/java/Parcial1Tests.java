@@ -19,6 +19,8 @@ import static org.junit.Assert.assertEquals;
 //import static org.junit.Assert.assertNotEquals;
 //import static org.junit.Assert.assertFalse;
 //import static org.junit.Assert.assertTrue;
+//import static org.junit.Assert.assertFalse;
+//import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -484,6 +486,62 @@ import org.junit.Test;
     assertEquals(1, var.cantidadTarjetasRojas());
     assertEquals(3, var.cantidadTarjetas(equipoLocal));
     }
+    /*@Test
+    public void comprobarCantidadDeTarjetasPorJugadorDeBocaPredict() {
+        Equipo boca = new Equipo("Boca Juniors", "BOC");
+        IJugador jugadorBoca6 = new Jugador("Marcos Rojo", 6);
+        IJugador jugadorBoca10 = new Jugador("Edinson Cavani", 10);
+        IJugador jugadorBoca19 = new Jugador("Valentin Barco", 19);
+    
+        boca.agregar(jugadorBoca6);
+        boca.agregar(jugadorBoca10);
+        boca.agregar(jugadorBoca19);
+    
+        TarjetaRoja tarjetaRojaParaJugador6DeBoca = new TarjetaRoja(jugadorBoca6);
+        TarjetaAmarilla tarjetaAmarillaParaJugador10DeBoca = new TarjetaAmarilla(jugadorBoca10);
+    
+        Partido partido = new Partido(new Estadio("La Bombonera", "Buenos Aires", "Argentina"), boca, null, "Semifinal Partido Vuelta");
+    
+        partido.agregar(tarjetaRojaParaJugador6DeBoca);
+        partido.agregar(tarjetaAmarillaParaJugador10DeBoca);
+    
+        Var elVar = new Var(partido);
+    
+        assertEquals(1, elVar.cantidadTarjetas(jugadorBoca6));
+        assertEquals(1, elVar.cantidadTarjetas(jugadorBoca10));
+        assertEquals(0, elVar.cantidadTarjetas(jugadorBoca19));
+    }
+    @Test
+public void comprobarJugadoresConTarjetaAmarillaPredict() {
+    Equipo boca = new Equipo("Boca Juniors", "BOC");
+    Equipo bocaa = new Equipo("Boca Juniors", "BOC");
+    IJugador jugadorBoca6 = new Jugador("Marcos Rojo", 6);
+    IJugador jugadorBoca10 = new Jugador("Edinson Cavani", 10);
+    IJugador jugadorBoca19 = new Jugador("Valentin Barco", 19);
 
+    boca.agregar(jugadorBoca6);
+    boca.agregar(jugadorBoca10);
+    boca.agregar(jugadorBoca19);
+
+    TarjetaRoja tarjetaRojaParaJugador6DeBoca = new TarjetaRoja(jugadorBoca6);
+    TarjetaAmarilla tarjetaAmarillaParaJugador10DeBoca = new TarjetaAmarilla(jugadorBoca10);
+
+    Partido partido = new Partido(new Estadio("La Bombonera", "Buenos Aires", "Argentina"), boca, bocaa, "Semifinal Partido Vuelta");
+
+    partido.agregar(tarjetaRojaParaJugador6DeBoca);
+    partido.agregar(tarjetaAmarillaParaJugador10DeBoca);
+
+    Var elVar = new Var(partido);
+
+    List<IJugador> jugadoresConTarjetaAmarilla = elVar.jugadoresConTarjetaAmarilla();
+
+    // Verifica que los jugadores con tarjeta amarilla son los esperados
+    assertEquals(1, jugadoresConTarjetaAmarilla.size()); // Debería haber 2 jugadores con tarjeta amarilla
+    assertTrue(jugadoresConTarjetaAmarilla.contains(jugadorBoca10));
+    assertFalse(jugadoresConTarjetaAmarilla.contains(jugadorBoca6)); // JugadorBoca6 tiene tarjeta roja, no amarilla
+    assertFalse(jugadoresConTarjetaAmarilla.contains(jugadorBoca19)); // JugadorBoca19 no tiene tarjetas
+}
+*/
+    
 
 }
