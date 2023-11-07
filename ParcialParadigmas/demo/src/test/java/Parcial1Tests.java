@@ -486,7 +486,7 @@ import org.junit.Test;
     assertEquals(1, var.cantidadTarjetasRojas());
     assertEquals(3, var.cantidadTarjetas(equipoLocal));
     }
-    /*@Test
+    /*  @Test
     public void comprobarCantidadDeTarjetasPorJugadorDeBocaPredict() {
         Equipo boca = new Equipo("Boca Juniors", "BOC");
         IJugador jugadorBoca6 = new Jugador("Marcos Rojo", 6);
@@ -536,12 +536,11 @@ public void comprobarJugadoresConTarjetaAmarillaPredict() {
     List<IJugador> jugadoresConTarjetaAmarilla = elVar.jugadoresConTarjetaAmarilla();
 
     // Verifica que los jugadores con tarjeta amarilla son los esperados
-    assertEquals(1, jugadoresConTarjetaAmarilla.size()); // Debería haber 2 jugadores con tarjeta amarilla
+    assertEquals(1, jugadoresConTarjetaAmarilla.size()); // Debería haber 1 jugador con tarjeta amarilla
     assertTrue(jugadoresConTarjetaAmarilla.contains(jugadorBoca10));
     assertFalse(jugadoresConTarjetaAmarilla.contains(jugadorBoca6)); // JugadorBoca6 tiene tarjeta roja, no amarilla
     assertFalse(jugadoresConTarjetaAmarilla.contains(jugadorBoca19)); // JugadorBoca19 no tiene tarjetas
 }
-*/
-    
+  */
 
 }

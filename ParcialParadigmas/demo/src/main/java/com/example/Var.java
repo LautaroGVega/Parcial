@@ -2,6 +2,7 @@ package com.example;
 
 import java.util.ArrayList;
 import java.util.List;
+//import java.util.stream.Collectors;
 
 
 
@@ -113,33 +114,28 @@ public class Var {
         setAsistenteDeVideo(asistenteDeVideo);
         setaVar(aVAR1, aVAR2, aVAR3);
     }
-    /*
-    public int cantidadTarjetas(IJugador jugador) {
-        int count = 0;
+ /* 
+public int cantidadTarjetas(IJugador jugador) {
+    return (int) partido.getTarjetas().stream()
+            .filter(tarjeta -> tarjeta.getJugador().equals(jugador))
+            .count();
+}
+public List<IJugador> jugadoresConTarjetaAmarilla() {
+    return partido.getTarjetas().stream()
+            .filter(tarjeta -> tarjeta instanceof TarjetaAmarilla)
+            .map(TarjetaBase::getJugador)
+            .distinct()
+            .collect(Collectors.toList());
+}
 
-        for (TarjetaBase tarjeta : partido.getTarjetas()) {
-            if (tarjeta.getJugador().equals(jugador)) {
-                count++;
-            }
-        }
-
-        return count;
-    }
-    public List<IJugador> jugadoresConTarjetaAmarilla() {
-        List<IJugador> jugadoresConTarjetaAmarilla = new ArrayList<>();
-
-        for (TarjetaBase tarjeta : partido.getTarjetas()) {
-            if (tarjeta instanceof TarjetaAmarilla) {
-                IJugador jugador = tarjeta.getJugador();
-                if (!jugadoresConTarjetaAmarilla.contains(jugador)) {
-                    jugadoresConTarjetaAmarilla.add(jugador);
-                }
-            }
-        }
-
-        return jugadoresConTarjetaAmarilla;
-    }
-    */
+public List<IJugador> jugadoresConTarjetaRoja() {
+    return partido.getTarjetas().stream()
+            .filter(tarjeta -> tarjeta instanceof TarjetaRoja)
+            .map(TarjetaBase::getJugador)
+            .distinct()
+            .collect(Collectors.toList());
+}
+*/ 
 
 }
 
