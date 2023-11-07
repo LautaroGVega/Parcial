@@ -1,14 +1,16 @@
 package com.example;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
 public class Var {
     private Partido partido;
     private AsistenteDeVideo asistenteDeVideo;
-    private List<AVAR> aVar;
+    private List<AVAR> aVar = new ArrayList<>();
     private Arbitro arbitro;
     private List<Arbitro> arbitros;
+    private Estadio estadio;
 
     public Var(Partido partido) {
         this.partido = partido;
@@ -17,14 +19,18 @@ public class Var {
     public List<AVAR> getaVar() {
         return aVar;
     }
-
-    public void setaVar(List<AVAR> aVar) {
-        if (this.aVar.size() == 3) {
-            this.aVar = aVar;
-        } else {
-            throw new IllegalArgumentException("aVar list must contain exactly 3 items.");
-        }
+    
+    public void setaVar(AVAR aVar1, AVAR aVar2, AVAR aVar3) {
+        this.aVar.add(aVar1);
+        this.aVar.add(aVar2);
+        this.aVar.add(aVar3);
+        // if (this.aVar.size() == 3) {
+        //     this.aVar = aVar;
+        // } else {
+        //     throw new IllegalArgumentException("aVar list must contain exactly 3 items.");
+        // }
     }
+
 
     public AsistenteDeVideo getAsistenteDeVideo() {
         return asistenteDeVideo;
@@ -64,6 +70,15 @@ public class Var {
         }
         return cont;
     }
+    public Partido getPartido() {
+        return this.partido;
+    }
+
+    public void setPartido(Partido partido) {
+        this.partido = partido;
+    }
+
+
 
     public void setArbitro(Arbitro arbitro) {
         this.arbitro = arbitro;
@@ -78,6 +93,22 @@ public class Var {
     
     public List<Arbitro> getArbitroLinea() {
         return arbitros;
+    }
+
+    public Estadio getEstadio() {
+ 
+        return estadio;
+    }
+
+    public void setEstadio(Estadio estadio) {
+        this.estadio = estadio;
+    }
+    
+
+    public Var(Partido pPartido, AsistenteDeVideo asistenteDeVideo, AVAR aVAR1, AVAR aVAR2, AVAR aVAR3){
+        setPartido(pPartido);
+        setAsistenteDeVideo(asistenteDeVideo);
+        setaVar(aVAR1, aVAR2, aVAR3);
     }
 
 

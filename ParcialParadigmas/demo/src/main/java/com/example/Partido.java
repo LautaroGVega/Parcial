@@ -7,10 +7,10 @@ public class Partido {
     private Equipo equipoLocal;
     private Equipo equipoVisitante;
     private String nombre;
-    private List<TarjetaBase> tarjetas;
+    private List<TarjetaBase> tarjetas = new ArrayList<>();
     private Estadio estadio;
     private Arbitro arbitro;
-    private List<Arbitro> arbitroLinea; // 2...2
+    private List<Arbitro> arbitroLinea = new ArrayList<>(); // 2...2
     private Arbitro arbitroAsistente;
 
 
@@ -31,16 +31,13 @@ public class Partido {
     }
 
     public List<Arbitro> getArbitroLinea() {
-        return arbitroLinea;
+        return this.arbitroLinea;
     }
 
     public void setArbitroLinea(List<Arbitro> arbitroLinea) {
-        if (this.arbitroLinea.size() == 2) {
             this.arbitroLinea = arbitroLinea;
-        } else {
-            throw new IllegalArgumentException("ArbitroLinea debe contener exactamente 2 elementos.");
-        }
     }
+ 
 
     public Arbitro getArbitro() {
         return arbitro;
@@ -87,8 +84,22 @@ public class Partido {
         return tarjetas;
     }
 
-    public Object getEstadio() {
+    public Estadio getEstadio() {
         return estadio;
+    }
+
+    public void setEstadio(Estadio estadio) {
+        this.estadio = estadio;
+    }
+
+    public Partido(Estadio pEstadio, Equipo pEquipoLocal, Equipo pEquipoVisitante, String pNombre, Arbitro arbitro, List<Arbitro> arbitrosLinea, Arbitro arbitroAsistente) {
+        setEstadio(pEstadio);
+        setEquipoLocal(pEquipoLocal);
+        setEquipoVisitante(pEquipoVisitante);
+        setName(pNombre);
+        setArbitro(arbitro);
+        setArbitroLinea(arbitrosLinea);
+        setArbitroAsistente(arbitroAsistente);
     }
 
 

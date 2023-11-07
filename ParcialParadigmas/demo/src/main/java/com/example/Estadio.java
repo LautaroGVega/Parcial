@@ -4,6 +4,7 @@ public class Estadio implements IImprimible{
 private String nombre;
 private String ciudad;
 private String pais;
+private Estadio estadio;
 
 	public Estadio(String nombre, String ciudad, String pais) {
         this.nombre = nombre;
@@ -35,6 +36,16 @@ private String pais;
     public void setPais(String pais) {
         this.pais = pais;
     }
+    
+    public Estadio getEstadio() {
+ 
+        return estadio;
+    }
+
+    public void setEstadio(Estadio estadio) {
+        this.estadio = estadio;
+    }
+    
     
     @Override
     public String toString() {
